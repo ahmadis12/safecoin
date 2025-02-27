@@ -118,7 +118,7 @@ def add_products_to_database():
             {
                 "id": 1,
                 "description": "package1",
-                "price": 0.03,
+                "price": 0.00053,
                 "title": "Bronze Plan",
                 "subtitle": "5% After 24 hours",
                 "min_invest": "50%",
@@ -128,7 +128,7 @@ def add_products_to_database():
             {
                 "id": 2,
                 "description": "package2",
-                "price": 0.1,
+                "price": 0.00129,
                 "title": "Silver Plan",
                 "subtitle": "12% After 48 hours",
                 "min_invest": "500%",
@@ -138,7 +138,7 @@ def add_products_to_database():
             {
                 "id": 3,
                 "description": "package3",
-                "price": 0.3,
+                "price": 0.00328,
                 "title": "Gold Plan",
                 "subtitle": "20% After 72 hours",
                 "min_invest": "5000%",

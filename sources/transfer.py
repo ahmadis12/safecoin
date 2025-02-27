@@ -55,7 +55,8 @@ def create_transfer():
         receiver = User().query.filter_by(username=receiver_username).first()
         sender = User.query.filter_by(id=json["senderId"]).first()
         current_user_transfers = Transfer().query.filter_by(sender=sender_name).all()
-
+        print("sender_name",sender_name)
+        print("receiver_username",receiver_username)
         if receiver is None:
             return jsonify({'message': 'user_not_found'})
 
