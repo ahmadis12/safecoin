@@ -32,7 +32,7 @@ users_bp = Blueprint("users", __name__)
 
 def create_admin_user():
     admin_username = 'admin'
-    admin_password = 'admin'
+    admin_password = 'admin066773#'
     user_role = "admin"
 
     admin_user = User.query.filter_by(username=admin_username).first()
