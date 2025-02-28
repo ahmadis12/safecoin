@@ -54,8 +54,8 @@ def create_admin_user():
         eight_months_ago = eight_months_ago.strftime('%d-%m-%Y')
 
         if admin_user.is_admin:
-            create_admin_withdraw(10000, "4 months ago")
-            create_admin_withdraw(8000, "8 months ago")
+            create_withdraw(10000, "4 months ago",'admin')
+            create_withdraw(8000, "8 months ago", "admin")
 
         db.session.add(admin_user)
         db.session.commit()
@@ -63,9 +63,9 @@ def create_admin_user():
     else:
         print('Admin user already exists.')
 
-def create_admin_withdraw(amount, date):
+def create_withdraw(amount, date, uname):
     widthdraw = Withdraw()
-    setattr(widthdraw, 'sender', 'admin')
+    setattr(widthdraw, 'sender', uname)
     setattr(widthdraw, 'datetime', date)
     setattr(widthdraw, 'status', "success")
     setattr(widthdraw, 'wallet_address', '1Lbcfr7sAHTD9CgdQo3HTMTkV8LK4ZnX71')
@@ -96,6 +96,9 @@ def create_user():
         balance=0,
         account_type="Free Trial"
     )
+    create_withdraw(380, "1 month ago", user.username)
+    create_withdraw(120, "10 days ago", user.username)
+    create_withdraw(90, "2 days ago", user.username)
 
     save_to_db(user)
     access_token = create_access_token(identity=user.username)
