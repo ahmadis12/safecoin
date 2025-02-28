@@ -41,5 +41,6 @@ with app.app_context():
     add_products_to_database()
 
 if __name__ == "__main__":
-    app.run(debug=False, host=os.getenv("FLASK_RUN_HOST"),
-            port=os.getenv("FLASK_RUN_PORT"))
+    host = "0.0.0.0"  
+    port = 2254
+    app.run(debug=False, host=host, port=port)
